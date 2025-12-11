@@ -1,0 +1,398 @@
+/* ================================
+   Cherry Blossom Coffee House
+   Web Programming I – Assignment 3
+   Author: Sara Fetoui
+   ================================ */
+
+/* ---------- CSS CUSTOM PROPERTIES ---------- */
+:root {
+  --cream: #FFF5E1;
+  --pink: #FFC0CB;
+  --brown: #4B2E2E;
+  --forest: #3E6B48;
+  --coffee: #6F4F28;
+}
+
+/* ---------- GLOBAL RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: var(--cream);
+  color: var(--brown);
+  line-height: 1.6;
+}
+
+/* ---------- HEADER / BANNER ---------- */
+.banner {
+  background-color: var(--pink);
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+  animation: fadeIn 1s ease-in-out; /* Advanced CSS #1 */
+}
+
+.banner .logo {
+  height: 80px;
+  vertical-align: middle;
+}
+
+.banner h1 {
+  font-size: clamp(24px, 4vw, 36px);
+  color: var(--brown);
+  margin: 10px 0;
+}
+
+.banner .tagline {
+  font-size: 18px;
+  color: var(--forest);
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* ---------- NAVIGATION ---------- */
+.main-nav {
+  margin-top: 10px;
+  position: relative;
+  z-index: 20;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--forest);
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Advanced CSS #2: Functional pseudo-class */
+.main-nav a:is(:hover, :focus) {
+  color: var(--coffee);
+  transform: scale(1.05);
+}
+
+/* ---------- MAIN CONTENT ---------- */
+main {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ---------- HEADINGS ---------- */
+h2, h3 {
+  color: var(--coffee);
+  margin-bottom: 10px;
+}
+
+/* ---------- TABLES ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid var(--coffee);
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--pink);
+  color: var(--brown);
+}
+
+/* ---------- FORMS ---------- */
+form {
+  background-color: var(--pink);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+fieldset {
+  border: 1px solid var(--coffee);
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+legend {
+  font-weight: bold;
+  color: var(--coffee);
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--coffee);
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  background-color: var(--forest);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- GALLERY ---------- */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ---------- STAFF GRID ---------- */
+.staff-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.staff-grid img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.staff-grid h3 {
+  margin-top: 10px;
+  color: var(--coffee);
+}
+
+.staff-grid p {
+  max-width: 220px;
+}
+
+/* ---------- LINKS PAGE ---------- */
+.links-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.links-list li {
+  margin: 5px 0;
+}
+
+.links-list a {
+  text-decoration: none;
+  color: var(--forest);
+  font-weight: bold;
+}
+
+.links-list a:hover {
+  color: var(--coffee);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: var(--pink);
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 768px) {
+  .banner h1 {
+    font-size: 24px;
+  }
+
+  .banner .logo {
+    height: 60px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  .staff-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ---------- ADVANCED CSS FEATURES ---------- */
+
+/* Fade-in animation (Advanced CSS #1) */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Absolutely positioned accent (Advanced CSS #3) */
+.banner::after {
+  content: "🌸";
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-size: 22px;
+  opacity: 0.5;
+}
+/* ---------- CONTACT PAGE IMPROVEMENTS ---------- */
+form {
+  background-color: var(--pink);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--brown);
+}
+
+fieldset {
+  border: 1px solid var(--coffee);
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff8f8;
+}
+
+legend {
+  font-weight: bold;
+  color: var(--coffee);
+  padding: 0 8px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--coffee);
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Buttons */
+.form-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  background-color: var(--forest);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: var(--coffee);
+  transform: scale(1.05);
+}
+/* --- Staff Page Styling (from Lab 12) --- */
+.row {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  gap: 25px;
+  transition: 0.25s ease;
+}
+
+.row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.row img {
+  width: 160px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.caption {
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--coffee);
+}
+/* --- Navigation Styling --- */
+.main-nav ul {
+  list-style-type: none;       /* removes bullet points */
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.main-nav li {
+  display: block;
+  margin: 8px 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--forest);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: var(--coffee);
+}
+
+
+
