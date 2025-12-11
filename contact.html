@@ -1,52 +1,95 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Cherry Blossom Coffee House</title>
-    <link rel="stylesheet" href="styles/main.css">
-</head>
-<body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Cherry Blossom Coffee House</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="icon" type="image/png" href="images/cherry-blossom.png">
 
-<header class="banner">
+</head>
+
+<body>
+  <header class="banner">
     <img src="images/cherry-blossom.png" alt="Cherry Blossom Logo" class="logo">
     <h1>Cherry Blossom Coffee House</h1>
-     <p class="tagline">Sip. Relax. Bloom with Us.</p>
+    <p class="tagline">Sip. Relax. Bloom with Us.</p>
 
     <nav class="main-nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="hours.html">Hours</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-        </ul>
+      <li><a href="index.html">Home</a></li>
+     <li><a href="menu.html">Menu</a></li>
+    <li><a href="hours.html">Hours</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="staff.html">Staff</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="links.html">Links</a></li>
+    <li><a href="rates.html">Rates</a></li>
     </nav>
-</header>
+  </header>
 
-<main>
+  <!-- YOUR FORM STARTS HERE -->
+  <main>
     <section class="intro">
-        <h2>Contact Us</h2>
-        <p>Have questions or want to book a table? Fill out the form below:</p>
-        <form>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" placeholder="Your Name"><br><br>
+      <h2>Contact Us</h2>
+      <p>Have questions or want to book a table? Fill out the form below:</p>
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" placeholder="Your Email"><br><br>
+      <form>
+        <fieldset>
+          <legend>Your Information</legend>
 
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="5" placeholder="Your Message"></textarea><br><br>
+          <label for="fname">First Name:</label>
+          <input type="text" id="fname" name="fname" required>
 
-            <input type="submit" value="Send">
-        </form>
+          <label for="lname">Last Name:</label>
+          <input type="text" id="lname" name="lname" required>
+
+          <label for="email">E-mail Address:</label>
+          <input type="email" id="email" name="email" required>
+        </fieldset>
+
+        <fieldset>
+          <legend>Type of Visit</legend>
+          <label><input type="radio" name="visit" value="dinein"> Dine-in</label><br>
+          <label><input type="radio" name="visit" value="takeout"> Take-out</label><br>
+          <label><input type="radio" name="visit" value="event"> Event Booking</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Interested in</legend>
+          <label><input type="checkbox" name="interest" value="catering"> Catering</label><br>
+          <label><input type="checkbox" name="interest" value="loyalty"> Loyalty Program</label><br>
+          <label><input type="checkbox" name="interest" value="events"> Events</label>
+        </fieldset>
+
+        <label for="message">Additional Questions:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your Message"></textarea>
+
+        <label for="source">How did you hear about us?</label>
+        <select id="source" name="source">
+          <optgroup label="Internet">
+            <option>Search Engine (Google, Yahoo)</option>
+            <option>Social Media</option>
+            <option>Link from another website</option>
+          </optgroup>
+          <optgroup label="Non-Internet">
+            <option>Referred by a friend</option>
+            <option>Advertisement</option>
+            <option>Flyer/Mailing</option>
+          </optgroup>
+        </select>
+
+        <div class="form-buttons">
+          <input type="submit" value="Submit">
+          <input type="reset" value="Cancel">
+        </div>
+      </form>
     </section>
-</main>
+  </main>
 
-<footer>
-    <p>&copy; 2025 Cherry Blossom Coffee House | Website designed by Sara Fetoui</p>
-</footer>
-
+  <footer>
+    <p>© 2025 Cherry Blossom Coffee House | Website designed by Sara Fetoui</p>
+  </footer>
 </body>
 </html>
